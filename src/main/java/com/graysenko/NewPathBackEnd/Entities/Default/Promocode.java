@@ -25,7 +25,7 @@ public class Promocode {
 
     private Integer usageLimit;
 
-    private Integer usedCount;
+    private Integer usedCount = 0;
 
     private Timestamp expiresAt; //null - never
 
