@@ -90,8 +90,8 @@ public class StripeController {
 
         SessionCreateParams params = SessionCreateParams.builder()
                 .setMode(SessionCreateParams.Mode.PAYMENT)
-                .setSuccessUrl("http://localhost:5173/success")
-                .setCancelUrl("http://localhost:5173/cancel")
+                .setSuccessUrl("https://nickgraysenko.org/success")
+                .setCancelUrl("https://nickgraysenko.org/cancel")
                 .putMetadata("promocode", promocode != null ? promocode : "")
                 .addAllLineItem(sessionCreateParams).build();
 

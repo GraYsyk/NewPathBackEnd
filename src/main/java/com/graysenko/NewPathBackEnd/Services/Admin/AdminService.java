@@ -29,9 +29,9 @@ public class AdminService {
 
     public BestsellerDTO getBestseller() {
         List<Object[]> result = orderRepository.findBestsellerItemId();
-        if (result == null) return null;
+        if (result.isEmpty()) return null;
 
-        Object[] bestseller = result.get(0);
+        Object[] bestseller = result.getFirst();
         Long itemId = ((Number) bestseller[0]).longValue();
         Long totalSold = ((Number) bestseller[1]).longValue();
 

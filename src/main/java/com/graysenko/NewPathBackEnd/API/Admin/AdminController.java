@@ -2,6 +2,7 @@ package com.graysenko.NewPathBackEnd.API.Admin;
 
 import com.graysenko.NewPathBackEnd.DTOs.Item.ItemDTO;
 import com.graysenko.NewPathBackEnd.DTOs.Item.ProductVariantsDTO;
+import com.graysenko.NewPathBackEnd.DTOs.Stats.BestsellerDTO;
 import com.graysenko.NewPathBackEnd.Entities.Item.Item;
 import com.graysenko.NewPathBackEnd.Entities.Item.ProductVariant;
 import com.graysenko.NewPathBackEnd.Services.Admin.AdminService;
@@ -36,7 +37,9 @@ public class AdminController {
 
     @GetMapping("/bestseller")
     public ResponseEntity<?> getBestseller() {
-        return ResponseEntity.ok(adminService.getBestseller());
+        BestsellerDTO bestseller = adminService.getBestseller();
+        if (bestseller == null) return ResponseEntity.ok(null);
+        return ResponseEntity.ok(bestseller);
     }
 
     @GetMapping("/monthlyGrowth")
